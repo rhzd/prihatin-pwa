@@ -1,33 +1,20 @@
-
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/Main.vue'),
+    path: "/",
+    component: () => import("layouts/Main.vue"),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: "", component: () => import("pages/Home.vue") },
+      { path: "post", component: () => import("pages/Post.vue") },
+      { path: "liked", component: () => import("pages/Liked.vue") },
+      { path: "search", component: () => import("pages/Search.vue") }
     ]
   },
-  {
-    path: '/post',
-    component: () => import('layouts/Post.vue'),
-    children: [
-      { path: '', component: () => import('pages/Index.vue') }
-    ]
-  },
-  {
-    path: '/liked',
-    component: () => import('layouts/Liked.vue'),
-    children: [
-      { path: '', component: () => import('pages/Index.vue') }
-    ]
-  },
-
   // Always leave this as last one,
   // but you can also remove it
   {
-    path: '*',
-    component: () => import('pages/Error404.vue')
+    path: "*",
+    component: () => import("pages/Error404.vue")
   }
-]
+];
 
-export default routes
+export default routes;

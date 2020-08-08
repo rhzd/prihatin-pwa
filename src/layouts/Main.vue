@@ -1,14 +1,16 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header reveal class="bg-white text-black">
+    <q-header class="bg-white text-black">
       <Header />
     </q-header>
 
-    <q-page-container>
+    <q-page-container
+      class="q-ma-md"
+    >
       <router-view />
     </q-page-container>
 
-    <q-footer reveal class="bg-white text-black">
+    <q-footer class="bg-white text-black">
       <BottomNavigator />
     </q-footer>
   </q-layout>
@@ -25,9 +27,7 @@ export default {
     BottomNavigator
   },
   data() {
-    return {
-      tab: "mails"
-    };
+    return {};
   }
 };
 </script>
@@ -37,9 +37,9 @@ export default {
   padding-bottom: env(safe-area-inset-bottom);
 }
 .q-header {
-    border-bottom: 0.1px solid black;
+  border-bottom: 0.1px solid grey;
 }
 .q-footer {
-    border-top: 0.1px solid black;
+  border-top: 0.1px solid grey;
 }
 </style>

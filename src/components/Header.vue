@@ -1,14 +1,12 @@
 <template>
-  <q-toolbar class="bg-white text-white">
-    <q-input dense disable clearable hide-bottom-space standout v-model="text">
-      <template v-slot:prepend>
-        <q-icon name="search" />
-      </template>
-      <template v-slot:append>
-        <q-icon v-if="text === ''" name="search" />
-        <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
-      </template>
-    </q-input>
+  <q-toolbar :class="this.$q.dark.isActive == true ? 'bg-dark text-white' : 'bg-white text-black'">
+    <q-toolbar-title class="q-ml-sm text-weight-bolder">
+      {{ this.currentRoute[0].toUpperCase() + this.currentRoute.slice(1) }}
+    </q-toolbar-title>
+    <q-space />
+    <q-btn class="q-ml-sm" flat round dense icon="eva-message-circle-outline">
+      <q-badge floating color="red">2</q-badge>
+    </q-btn>
   </q-toolbar>
 </template>
 
@@ -16,16 +14,16 @@
 export default {
   data() {
     return {
-      title: "Prihatin",
-      text: "Prihatin"
+      title: "Prihatin"
     };
   },
-  methods: {}
+  methods: {},
+  computed: {
+    currentRoute() {
+      return this.$store.state.navigation.currentRoute;
+    }
+  }
 };
 </script>
 
-<style lang="scss">
-.q-input {
-  width: inherit;
-}
-</style>
+<style lang="scss"></style>
