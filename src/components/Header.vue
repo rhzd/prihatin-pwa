@@ -1,13 +1,21 @@
 <template>
-  <q-toolbar :class="this.$q.dark.isActive == true ? 'bg-dark text-white' : 'bg-white text-black'">
-    <q-toolbar-title class="q-ml-sm text-weight-bolder">
-      {{ this.currentRoute[0].toUpperCase() + this.currentRoute.slice(1) }}
-    </q-toolbar-title>
-    <q-space />
-    <q-btn class="q-ml-sm" flat round dense icon="eva-message-circle-outline">
-      <q-badge floating color="red">2</q-badge>
-    </q-btn>
-  </q-toolbar>
+  <div class="bg-white text-primary">
+    <q-toolbar class="row q-py-md q-px-md">
+      <q-input
+        standout="bg-primary text-white"
+        placeholder="Search"
+        class="col-11 q-pr-sm"
+        dense
+      >
+        <template v-slot:append>
+          <q-icon name="eva-search-outline" class="cursor-pointer" />
+        </template>
+      </q-input>
+      <div class="col-1 text-right">
+        <q-btn flat round dense class="" icon="eva-message-circle-outline" />
+      </div>
+    </q-toolbar>
+  </div>
 </template>
 
 <script>

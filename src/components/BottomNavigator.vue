@@ -14,14 +14,14 @@
       to="/"
       exact
     />
-    <q-route-tab
+    <!-- <q-route-tab
       :ripple="false"
       name="search"
       :icon="this.tab !== 'search' ? 'eva-search-outline' : 'eva-search'"
       to="/search"
       exact
-    />
-    <q-route-tab
+    /> -->
+    <!-- <q-route-tab
       :ripple="false"
       name="post"
       :icon="
@@ -29,7 +29,7 @@
       "
       to="/post"
       exact
-    />
+    /> -->
     <q-route-tab
       :ripple="false"
       name="liked"
@@ -37,7 +37,6 @@
       to="/liked"
       exact
     >
-      <q-badge color="red" floating>2</q-badge>
     </q-route-tab>
     <q-route-tab
       :ripple="false"

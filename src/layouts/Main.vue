@@ -5,7 +5,7 @@
     </q-header>
 
     <q-page-container
-      class="q-ma-md"
+      class=""
     >
       <router-view />
     </q-page-container>
@@ -36,10 +36,10 @@ export default {
 .q-tabs {
   padding-bottom: env(safe-area-inset-bottom);
 }
-.q-header {
-  border-bottom: 0.1px solid grey;
-}
-.q-footer {
-  border-top: 0.1px solid grey;
-}
+// .q-header {
+//   border-bottom: 0.1px solid grey;
+// }
+// .q-footer {
+//   border-top: 0.1px solid grey;
+// }
 </style>
