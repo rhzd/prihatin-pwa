@@ -68,10 +68,18 @@
       />
     </div>
     <q-footer
-      class="q-px-md q-py-sm padding-bottom"
-      :class="dark === true ? 'bg-dark' : 'bg-white'"
+      class="q-px-md shadow-4"
+      :class="[dark === true ? 'bg-lightdark' : 'bg-white', focus === true ? '' : 'padding-bottom']"
     >
-      <q-input rounded standout v-model="text" :dense="dense">
+      <q-input
+        class="q-my-sm"
+        rounded
+        standout
+        @focus="focusMethod"
+        @blur="blurMethod"
+        v-model="text"
+        :dense="dense"
+      >
         <template v-slot:append>
           <q-icon
             v-if="text !== ''"
@@ -96,11 +104,24 @@ export default {
       text: "",
       ph: "",
       dense: true,
-      dark: null
+      dark: null,
+      focus: false
     };
   },
   mounted() {
     this.dark = this.$q.dark.isActive;
+  },
+  methods: {
+    focusMethod(val) {
+      if (val.type == "focusin") {
+        this.focus = true
+      }
+    },
+    blurMethod(val) {
+      if (val.type == "focusout") {
+        this.focus = false
+      }
+    }
   },
   watch: {
     "$q.dark.isActive"(val) {
