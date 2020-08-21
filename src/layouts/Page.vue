@@ -7,24 +7,16 @@
     <q-page-container class="">
       <router-view />
     </q-page-container>
-
-    <q-footer
-      class="bg-white shadow-4 text-black"
-    >
-      <BottomNavigator />
-    </q-footer>
   </q-layout>
 </template>
 
 <script>
-import Header from "components/Header.vue";
-import BottomNavigator from "components/BottomNavigator.vue";
+import Header from "components/ModalHeader.vue";
 
 export default {
   name: "MainLayout",
   components: {
-    Header,
-    BottomNavigator
+    Header
   },
   data() {
     return {};

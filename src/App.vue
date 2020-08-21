@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss">
 body.body--dark {
-  background: #1d1d1d;
+  background: #121212;
 }
 body.body--light {
   background: #fff;

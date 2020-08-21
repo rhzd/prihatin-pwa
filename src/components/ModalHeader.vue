@@ -1,18 +1,8 @@
 <template>
   <div :class="dark == true ? 'bg-dark text-grey' : 'bg-white text-black'">
     <q-toolbar class="row q-py-md q-px-md">
-      <q-input
-        standout="bg-primary text-white"
-        placeholder="Search"
-        class="col-11 q-pr-sm"
-        dense
-      >
-        <template v-slot:append>
-          <q-icon name="eva-search-outline" class="cursor-pointer" />
-        </template>
-      </q-input>
       <div class="col-1 text-right">
-        <q-btn flat round dense class="" to="page/message" icon="eva-message-circle-outline" />
+        <q-btn flat round dense class="" v-go-back.single icon="eva-arrow-back-outline" />
       </div>
     </q-toolbar>
   </div>

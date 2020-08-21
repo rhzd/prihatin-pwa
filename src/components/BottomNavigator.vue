@@ -5,7 +5,7 @@
     active-color="primary"
     indicator-color="transparent"
     class="mobile-only"
-    :class="this.$q.dark.isActive == true ? 'bg-dark text-grey' : 'bg-white text-black'"
+    :class="dark == true ? 'bg-lightdark text-grey' : 'bg-white text-black'"
   >
     <q-route-tab
       :ripple="false"
@@ -42,7 +42,7 @@
       :ripple="false"
       name="profile"
       :icon="this.tab !== 'profile' ? 'eva-person-outline' : 'eva-person'"
-      to="/liked"
+      to="/profile"
       exact
     >
     </q-route-tab>
@@ -52,12 +52,16 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      dark: null
+    };
   },
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    this.dark = this.$q.dark.isActive
+  },
 
   computed: {
     tab: {
@@ -75,6 +79,9 @@ export default {
       store.dispatch({
         currentRoute: val
       });
+    },
+    "$q.dark.isActive"(val) {
+      this.dark = val;
     }
   }
 };
@@ -83,5 +90,8 @@ export default {
 <style lang="scss">
 .q-tabs {
   padding-bottom: env(safe-area-inset-bottom);
+}
+.bg-lightdark {
+  background-color: #1F1F1F;
 }
 </style>
