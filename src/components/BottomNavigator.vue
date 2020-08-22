@@ -2,50 +2,59 @@
   <q-tabs
     v-model="tab"
     align="justify"
+    no-caps
     active-color="primary"
     indicator-color="transparent"
-    class="mobile-only"
+    dense
+    class="mobile-only q-pt-xs"
     :class="dark == true ? 'bg-lightdark text-grey' : 'bg-white text-black'"
   >
     <q-route-tab
       :ripple="false"
       name="home"
-      :icon="this.tab !== 'home' ? 'eva-home-outline' : 'eva-home'"
+      label="Explore"
+      :icon="this.tab !== 'home' ? 'eva-home-outline' : 'eva-home-outline'"
       to="/"
+      exact
+    />
+    <q-route-tab
+      :ripple="false"
+      name="liked"
+      label="Liked"
+      :icon="this.tab !== 'liked' ? 'eva-heart-outline' : 'eva-heart-outline'"
+      to="/liked"
       exact
     />
     <!-- <q-route-tab
       :ripple="false"
       name="search"
+      label="Post"
       :icon="this.tab !== 'search' ? 'eva-search-outline' : 'eva-search'"
       to="/search"
       exact
     /> -->
-    <!-- <q-route-tab
-      :ripple="false"
-      name="post"
-      :icon="
-        this.tab !== 'post' ? 'eva-plus-circle-outline' : 'eva-plus-circle'
-      "
-      to="/post"
-      exact
-    /> -->
     <q-route-tab
       :ripple="false"
-      name="liked"
-      :icon="this.tab !== 'liked' ? 'eva-heart-outline' : 'eva-heart'"
-      to="/liked"
+      name="message"
+      label="Chat"
+      :icon="
+        this.tab !== 'message'
+          ? 'eva-message-circle-outline'
+          : 'eva-message-circle'
+      "
+      to="/message"
       exact
-    >
-    </q-route-tab>
+    />
     <q-route-tab
       :ripple="false"
       name="profile"
-      :icon="this.tab !== 'profile' ? 'eva-person-outline' : 'eva-person'"
+      label="Profile"
+      :icon="
+        this.tab !== 'profile' ? 'eva-person-outline' : 'eva-person-outline'
+      "
       to="/profile"
       exact
-    >
-    </q-route-tab>
+    />
   </q-tabs>
 </template>
 
@@ -59,8 +68,8 @@ export default {
 
   created() {},
 
-  mounted() {
-    this.dark = this.$q.dark.isActive
+  beforeMount() {
+    this.dark = this.$q.dark.isActive;
   },
 
   computed: {
@@ -92,6 +101,12 @@ export default {
   padding-bottom: env(safe-area-inset-bottom);
 }
 .bg-lightdark {
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
+}
+
+.q-tab__label {
+  font-size: 12px;
+  line-height: 1.75em;
+  font-weight: 500;
 }
 </style>

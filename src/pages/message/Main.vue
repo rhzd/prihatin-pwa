@@ -3,7 +3,7 @@
     <q-list class="">
       <q-item-label header>Message</q-item-label>
 
-      <q-item clickable to="/page/chat" v-ripple>
+      <q-item clickable to="/message/chat" v-ripple>
         <q-item-section avatar>
           <q-avatar>
             <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
@@ -26,7 +26,7 @@
 
       <q-separator inset="item" />
 
-      <q-item clickable to="/page/chat" v-ripple>
+      <q-item clickable to="/message/chat" v-ripple>
         <q-item-section avatar>
           <q-avatar>
             <img src="https://cdn.quasar.dev/img/avatar4.jpg" />

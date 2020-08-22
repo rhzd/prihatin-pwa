@@ -1,21 +1,31 @@
 const routes = [
   {
     path: "/",
-    component: () => import("layouts/Main.vue"),
+    component: () => import("layouts/Home.vue"),
     children: [
-      { path: "", component: () => import("pages/Home.vue") },
-      { path: "post", component: () => import("pages/Post.vue") },
-      { path: "liked", component: () => import("pages/Liked.vue") },
-      { path: "search", component: () => import("pages/Search.vue") },
-      { path: "profile", component: () => import("pages/Profile.vue") }
+      { path: "", component: () => import("pages/home/Main.vue") },
     ]
   },
   {
-    path: "/page/",
-    component: () => import("layouts/Page.vue"),
+    path: "/liked",
+    component: () => import("layouts/Liked.vue"),
     children: [
-      { path: "message", component: () => import("pages/Message.vue") },
-      { path: "chat", component: () => import("pages/Chat.vue") }
+      { path: "", component: () => import("pages/liked/Main.vue") },
+    ]
+  },
+  {
+    path: "/profile",
+    component: () => import("layouts/Profile.vue"),
+    children: [
+      { path: "", component: () => import("pages/profile/Main.vue") },
+    ]
+  },
+  {
+    path: "/message/",
+    component: () => import("layouts/Message.vue"),
+    children: [
+      { path: "", component: () => import("pages/message/Main.vue") },
+      { path: "chat", component: () => import("pages/message/Chat.vue") }
     ]
   },
   // Always leave this as last one,

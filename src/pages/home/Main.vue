@@ -145,7 +145,7 @@ export default {
       dark: null
     };
   },
-  mounted() {
+  beforeMount() {
     this.dark = this.$q.dark.isActive;
   },
 

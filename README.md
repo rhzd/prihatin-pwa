@@ -1,4 +1,4 @@
-# Prihatin (prihatin)
+# FreeJe (freeje)
 
 A free giving app
 

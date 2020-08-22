@@ -12,11 +12,11 @@
 export default {
   data() {
     return {
-      title: "Prihatin",
+      title: "FreeJe",
       dark: null
     };
   },
-  mounted() {
+  beforeMount() {
     this.dark = this.$q.dark.isActive;
   },
   methods: {},

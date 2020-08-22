@@ -1,8 +1,8 @@
 {
-  "name": "prihatin",
+  "name": "freeje",
   "version": "0.0.1",
   "description": "A free giving app",
-  "productName": "Prihatin",
+  "productName": "FreeJe",
   "author": "rhzd <i.ruhaizad@gmail.com>",
   "private": true,
   "scripts": {

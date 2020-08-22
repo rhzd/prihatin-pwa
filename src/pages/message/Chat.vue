@@ -108,7 +108,7 @@ export default {
       focus: false
     };
   },
-  mounted() {
+  beforeMount() {
     this.dark = this.$q.dark.isActive;
   },
   methods: {

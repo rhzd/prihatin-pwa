@@ -5,7 +5,6 @@
       <q-intersection
         v-for="index in 60"
         :key="index"
-        transition="scale"
         class="col-12 example-item"
       >
         <q-card
@@ -37,7 +36,7 @@ export default {
     };
   },
 
-  mounted() {
+  beforeMount() {
     this.dark = this.$q.dark.isActive;
   },
 
