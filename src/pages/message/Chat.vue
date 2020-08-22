@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md row justify-center">
+  <div class="q-pa-md row">
     <div style="width: 100%; max-width: 400px">
       <q-chat-message
         name="me"
@@ -69,7 +69,10 @@
     </div>
     <q-footer
       class="q-px-md shadow-4"
-      :class="[dark === true ? 'bg-lightdark' : 'bg-white', focus === true ? '' : 'padding-bottom']"
+      :class="[
+        dark === true ? 'bg-lightdark' : 'bg-white',
+        focus === true ? '' : 'padding-bottom'
+      ]"
     >
       <q-input
         class="q-my-sm"
@@ -114,12 +117,12 @@ export default {
   methods: {
     focusMethod(val) {
       if (val.type == "focusin") {
-        this.focus = true
+        this.focus = true;
       }
     },
     blurMethod(val) {
       if (val.type == "focusout") {
-        this.focus = false
+        this.focus = false;
       }
     }
   },

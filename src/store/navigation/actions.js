@@ -1,3 +1,3 @@
-export function updateCurrentRoute (context, payload) {
-    context.commit('updateCurrentRoute', payload)
+export function updateCurrentRoute(context, payload) {
+  context.commit("updateCurrentRoute", payload);
 }

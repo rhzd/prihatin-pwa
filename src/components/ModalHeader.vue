@@ -1,7 +1,7 @@
 <template>
   <div :class="dark == true ? 'bg-dark text-grey' : 'bg-white text-black'">
-    <q-toolbar class="row q-py-md q-px-md">
-      <div class="col-1 text-right">
+    <q-toolbar class="row">
+      <div class="col-1 text-left">
         <q-btn flat round dense class="" v-go-back.single icon="eva-arrow-back-outline" />
       </div>
     </q-toolbar>

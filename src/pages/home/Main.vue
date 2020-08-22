@@ -1,130 +1,119 @@
 <template>
   <q-page>
-    <q-pull-to-refresh
-      icon="eva-refresh-outline"
-      :bg-color="dark === true ? 'lightdark' : 'white'"
-      @refresh="refresh"
-    >
-      <q-infinite-scroll @load="onLoad" :offset="250">
-        <div class="row">
-          <div class="col-12 q-pt-md">
-            <span class="text-h6 text-weight-bold q-pl-md">Categories</span>
-          </div>
-          <div class="col-12">
-            <q-scroll-area
-              horizontal
-              style="height: 130px; width: 100%;"
-              :thumb-style="thumbStyle"
-              :bar-style="barStyle"
-            >
-              <div class="row no-wrap q-px-sm q-pt-sm">
-                <div v-for="n in 10" :key="n" class="q-pa-sm text-center">
-                  <!-- <q-btn class="shadow-box" icon="eva-message-circle-outline" /> -->
-                  <!-- <q-skeleton bordered type="circle" size="55px" /> -->
-                  <div
-                    v-if="dark === true"
-                    class="shadow-box-dark q-mb-md"
-                  ></div>
-                  <div v-else class="shadow-box-light q-mb-md"></div>
-                  <span class="text-caption text-weight-medium"
-                    >Item{{ n }}</span
-                  >
-                </div>
-              </div>
-            </q-scroll-area>
-          </div>
-          <div class="col-6 q-pt-xl">
-            <span style="font-size: 20px" class="text-weight-bold q-pl-md"
-              >Most Viewed</span
-            >
-          </div>
-          <div style="align-self: center;" class="col-6 text-right q-pt-xl">
-            <span style="font-size: 16px;" class="text-weight-medium q-pr-md"
-              >See all</span
-            >
-          </div>
-          <div class="col-12 q-px-md">
-            <div class="row">
-              <div class="col-6 q-pt-md q-pr-sm">
-                <div class="row">
-                  <div class="item-box">
-                    <img
-                      class="item-box"
-                      src="https://cdn.quasar.dev/img/mountains.jpg"
-                    />
-                  </div>
-                  <span style="font-size: 18px" class="col-12 text-weight-bold"
-                    >Normal Item</span
-                  >
-                  <span class="col-12 text-caption"
-                    >This is some description.</span
-                  >
-                  <span style="font-size: 22px; color: #FF4081" class="col-12"
-                    >RM0</span
-                  >
-                </div>
-              </div>
-              <div class="col-6 q-pt-md q-pl-sm">
-                <div class="row">
-                  <div class="item-box">
-                    <img
-                      class="item-box"
-                      src="https://cdn.quasar.dev/img/mountains.jpg"
-                    />
-                  </div>
-                  <span style="font-size: 18px" class="col-12 text-weight-bold"
-                    >Normal Item</span
-                  >
-                  <span class="col-12 text-caption"
-                    >This is some description.</span
-                  >
-                  <span style="font-size: 22px; color: #FF4081" class="col-12"
-                    >RM0</span
-                  >
-                </div>
+    <q-infinite-scroll @load="onLoad" :offset="250">
+      <div class="row">
+        <div class="col-12 q-pt-md">
+          <span class="text-h6 text-weight-bold q-pl-md">Categories</span>
+        </div>
+        <div class="col-12">
+          <q-scroll-area
+            horizontal
+            style="height: 130px; width: 100%;"
+            :thumb-style="thumbStyle"
+            :bar-style="barStyle"
+          >
+            <div class="row no-wrap q-px-sm q-pt-sm">
+              <div v-for="n in 10" :key="n" class="q-pa-sm text-center">
+                <!-- <q-btn class="shadow-box" icon="eva-message-circle-outline" /> -->
+                <!-- <q-skeleton bordered type="circle" size="55px" /> -->
+                <div v-if="dark === true" class="shadow-box-dark q-mb-md"></div>
+                <div v-else class="shadow-box-light q-mb-md"></div>
+                <span class="text-caption text-weight-medium">Item{{ n }}</span>
               </div>
             </div>
-          </div>
-          <div class="col-12 q-pt-xl">
-            <span style="font-size: 20px" class="text-weight-bold q-pl-md"
-              >Recently Added</span
-            >
-          </div>
-          <div class="col-12 q-px-sm">
-            <div class="row">
-              <div
-                v-for="(item, index) in items"
-                :key="index"
-                class="col-6 q-pt-md q-px-sm"
-              >
-                <div class="row">
-                  <div class="item-box">
-                    <img
-                      class="item-box"
-                      src="https://cdn.quasar.dev/img/mountains.jpg"
-                    />
-                  </div>
-                  <span style="font-size: 18px" class="col-12 text-weight-bold"
-                    >Normal Item {{ index }}</span
-                  >
-                  <span class="col-12 text-caption"
-                    >This is some description.</span
-                  >
-                  <span style="font-size: 22px; color: #FF4081" class="col-12"
-                    >RM{{ index }}0</span
-                  >
+          </q-scroll-area>
+        </div>
+        <div class="col-6 q-pt-xl">
+          <span style="font-size: 20px" class="text-weight-bold q-pl-md"
+            >Most Viewed</span
+          >
+        </div>
+        <div style="align-self: center;" class="col-6 text-right q-pt-xl">
+          <span style="font-size: 16px;" class="text-weight-medium q-pr-md"
+            >See all</span
+          >
+        </div>
+        <div class="col-12 q-px-md">
+          <div class="row">
+            <div class="col-6 q-pt-md q-pr-sm">
+              <div class="row">
+                <div class="item-box">
+                  <img
+                    class="item-box"
+                    src="https://cdn.quasar.dev/img/mountains.jpg"
+                  />
                 </div>
+                <span style="font-size: 18px" class="col-12 text-weight-bold"
+                  >Normal Item</span
+                >
+                <span class="col-12 text-caption"
+                  >This is some description.</span
+                >
+                <span style="font-size: 22px; color: #FF4081" class="col-12"
+                  >RM0</span
+                >
+              </div>
+            </div>
+            <div class="col-6 q-pt-md q-pl-sm">
+              <div class="row">
+                <div class="item-box">
+                  <img
+                    class="item-box"
+                    src="https://cdn.quasar.dev/img/mountains.jpg"
+                  />
+                </div>
+                <span style="font-size: 18px" class="col-12 text-weight-bold"
+                  >Normal Item</span
+                >
+                <span class="col-12 text-caption"
+                  >This is some description.</span
+                >
+                <span style="font-size: 22px; color: #FF4081" class="col-12"
+                  >RM0</span
+                >
               </div>
             </div>
           </div>
         </div>
-        <template v-slot:loading>
-          <div class="row justify-center q-my-md">
-            <q-spinner-dots color="primary" size="40px" />
+        <div class="col-12 q-pt-xl">
+          <span style="font-size: 20px" class="text-weight-bold q-pl-md"
+            >Recently Added</span
+          >
+        </div>
+        <div class="col-12 q-px-sm">
+          <div class="row">
+            <div
+              v-for="(item, index) in items"
+              :key="index"
+              class="col-6 q-pt-md q-px-sm"
+            >
+              <div class="row">
+                <div class="item-box">
+                  <img
+                    class="item-box"
+                    src="https://cdn.quasar.dev/img/mountains.jpg"
+                  />
+                </div>
+                <span style="font-size: 18px" class="col-12 text-weight-bold"
+                  >Normal Item {{ index }}</span
+                >
+                <span class="col-12 text-caption"
+                  >This is some description.</span
+                >
+                <span style="font-size: 22px; color: #FF4081" class="col-12"
+                  >RM{{ index }}0</span
+                >
+              </div>
+            </div>
           </div>
-        </template>
-      </q-infinite-scroll>
-    </q-pull-to-refresh>
+        </div>
+      </div>
+      <template v-slot:loading>
+        <div class="row justify-center q-my-md">
+          <q-spinner-dots color="primary" size="40px" />
+        </div>
+      </template>
+    </q-infinite-scroll>
   </q-page>
 </template>
 
@@ -156,12 +145,6 @@ export default {
           this.items.push({}, {}, {}, {});
           done();
         }
-      }, 1000);
-    },
-    refresh(done) {
-      setTimeout(() => {
-        this.items.push({}, {}, {}, {});
-        done();
       }, 1000);
     }
   },

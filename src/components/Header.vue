@@ -4,7 +4,7 @@
       <q-input
         standout="bg-primary text-white"
         placeholder="Search"
-        class="col-12 q-pr-sm"
+        class="col-12"
         dense
       >
         <template v-slot:append>

@@ -13,7 +13,7 @@
 import BottomNavigator from "components/BottomNavigator.vue";
 
 export default {
-  name: "MainLayout",
+  name: "ProfileLayout",
   components: {
     BottomNavigator
   },
