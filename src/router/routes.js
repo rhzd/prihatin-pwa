@@ -15,7 +15,7 @@ const routes = [
     children: [{ path: "", component: () => import("pages/profile/Main.vue") }]
   },
   {
-    path: "/message/",
+    path: "/message",
     component: () => import("layouts/Message.vue"),
     children: [{ path: "", component: () => import("pages/message/Main.vue") }]
   },
@@ -23,6 +23,11 @@ const routes = [
     path: "/message/chat",
     component: () => import("layouts/Modal.vue"),
     children: [{ path: "", component: () => import("pages/message/Chat.vue") }]
+  },
+  {
+    path: "/item",
+    component: () => import("layouts/Product.vue"),
+    children: [{ path: "", component: () => import("pages/product/Main.vue") }]
   },
   // Always leave this as last one,
   // but you can also remove it

@@ -13,7 +13,7 @@
       :ripple="false"
       name="home"
       label="Explore"
-      :icon="this.tab !== 'home' ? 'eva-home-outline' : 'eva-home-outline'"
+      :icon="this.tab !== 'home' ? 'eva-home' : 'eva-home'"
       to="/"
       exact
     />
@@ -21,7 +21,7 @@
       :ripple="false"
       name="liked"
       label="Liked"
-      :icon="this.tab !== 'liked' ? 'eva-heart-outline' : 'eva-heart-outline'"
+      :icon="this.tab !== 'liked' ? 'eva-heart' : 'eva-heart'"
       to="/liked"
       exact
     />
@@ -39,7 +39,7 @@
       label="Chat"
       :icon="
         this.tab !== 'message'
-          ? 'eva-message-circle-outline'
+          ? 'eva-message-circle'
           : 'eva-message-circle'
       "
       to="/message"
@@ -50,7 +50,7 @@
       name="profile"
       label="Profile"
       :icon="
-        this.tab !== 'profile' ? 'eva-person-outline' : 'eva-person-outline'
+        this.tab !== 'profile' ? 'eva-person' : 'eva-person'
       "
       to="/profile"
       exact

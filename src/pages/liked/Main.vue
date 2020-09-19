@@ -11,7 +11,7 @@
           class="q-ma-sm"
           :class="dark === true ? 'shadow-box-dark' : 'shadow-box-light'"
         >
-          <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+          <img height="250px" :src="'https://picsum.photos/200/300?nocache=' + Date.now() + index" />
 
           <q-card-section>
             <div class="text-h6">Item {{ index }}</div>

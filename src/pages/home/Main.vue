@@ -40,7 +40,8 @@
                 <div class="item-box">
                   <img
                     class="item-box"
-                    src="https://cdn.quasar.dev/img/mountains.jpg"
+                    :src="'https://picsum.photos/200/300?nocache=' + Date.now() + 'a'"
+                    @click="gotoItem" 
                   />
                 </div>
                 <span style="font-size: 18px" class="col-12 text-weight-bold"
@@ -59,7 +60,8 @@
                 <div class="item-box">
                   <img
                     class="item-box"
-                    src="https://cdn.quasar.dev/img/mountains.jpg"
+                    :src="'https://picsum.photos/200/300?nocache=' + Date.now() + 'b'"
+                    @click="gotoItem" 
                   />
                 </div>
                 <span style="font-size: 18px" class="col-12 text-weight-bold"
@@ -91,7 +93,7 @@
                 <div class="item-box">
                   <img
                     class="item-box"
-                    src="https://cdn.quasar.dev/img/mountains.jpg"
+                    :src="'https://picsum.photos/200/300?nocache=' + Date.now() + index"
                   />
                 </div>
                 <span style="font-size: 18px" class="col-12 text-weight-bold"
@@ -146,6 +148,9 @@ export default {
           done();
         }
       }, 1000);
+    },
+    gotoItem() {
+      this.$router.push({path: '/item'})
     }
   },
 
